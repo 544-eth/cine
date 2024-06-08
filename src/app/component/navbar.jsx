@@ -1,15 +1,17 @@
 import React from 'react'
 import { FcSearch } from "react-icons/fc";
 import { GoQuestion } from "react-icons/go";
+import styles from './index.module.css' 
+
 
 
 export default function Navbar() {
   return (
-    <div className='  bg-gray-200 '>
+    <div className='   '>
         <div className=' h-20 w-[95%] m-auto flex flex-row items-center justify-between'>
             <div className=' flex flex-row items-center gap-20'>
                 <div>
-                    <h1 className='  text-orange-600 text-[30px] font-bold'>CineGo</h1>
+                    <h1 className={styles.logo}>CineGo</h1>
                 </div>
                 <div className=' flex text-orange-600 '>
                     <h1 className=' '>Classes</h1>
