@@ -1,9 +1,9 @@
-import { Public_Sans } from "next/font/google";
+import { Sansita_Swashed } from "next/font/google";
 import "./globals.css";
 import Navbar from "./component/navbar";
 import Footer from "./component/footer";
 
-const inter = Public_Sans({ subsets: ["latin"], weight: ['500'] });
+const inter = Sansita_Swashed({ subsets: ["latin"], weight: ['500'] });
 
 export const metadata = {
   title: "Cine Go App",

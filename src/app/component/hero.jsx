@@ -1,5 +1,7 @@
+"use client"
 import React from 'react'
 import Image from 'next/image';
+import Carousel from './carousel';
 import { FaCheckCircle } from 'react-icons/fa';
 
 export default function HeroSection() {
@@ -31,7 +33,7 @@ export default function HeroSection() {
               
             ))}
           </div>
-          <div className='  '>
+          <div className=''>
               <div className="absolute inset-0 pb-56 flex flex-col items-center justify-center gap-5 ">
                     <h2 className="text-white text-5xl font-extrabold ">Elevate your experience, </h2>
                     <h2 className="text-white text-5xl font-extrabold ">Expand your reach</h2>
@@ -74,6 +76,44 @@ export default function HeroSection() {
                 </div>
               </div>
           </div>
+        </div>
+
+        {/* third hero */}
+        <div className=' flex justify-center w-[95%] m-auto h-full text-black'>
+            <div className=' flex flex-col items-center justify-center'>
+              <h2 className=' text-[40px] font-bold'>Elevate Your Brand Experience</h2>
+              <div className=' grid-cols-8 grid gap-5 p-5 '>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Action</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Thriller</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Adventure</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Animation</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Comedy</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Crime</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Historical</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Drama</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Psychological</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Science Fiction</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Romance</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Mystery</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>War</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Musical</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Horror</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Fantasy</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Biography</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Documentary</button>
+                <button className=' bg-orange-600 p-2 font-bold hover:bg-black hover:text-orange-600 rounded-full transition duration-300 gap-5'>Family</button>
+              </div>
+            </div>
+        </div>
+
+        {/* fourth hero */}
+        <div className=' flex justify-center w-[95%] m-auto h-full text-black'>
+            <div>
+              <h2>Trending now:</h2>
+              <div className="flex items-center justify-center h-screen ">
+                  <Carousel />
+              </div>
+            </div>
         </div>
     </div>
   )
