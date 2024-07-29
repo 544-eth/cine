@@ -8,37 +8,61 @@ const slidingImages = [
     '/images/10.png',
     '/images/11.png',
     '/images/12.jpeg',
+    '/images/13.jpg',
+    '/images/8.png',
+    '/images/9.jpg',
+    '/images/10.png',
+    '/images/11.png',
+    '/images/12.jpeg',
+    '/images/13.jpg',
+    '/images/8.png',
+    '/images/9.jpg',
+    '/images/10.png',
+    '/images/11.png',
+    '/images/12.jpeg',
     '/images/13.jpg'
 ];
 
-export default function Carousel() {
-const [currentIndex, setCurrentIndex] = useState(0)
 
-useEffect(() => {
+const Carousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
     const interval = setInterval(() => {
-        setCurrentIndex((preIndex) =>
-            preIndex  === slidingImages.length - 1 ? 0 : preIndex + 1
-        );
-    }, 3000);
+      setCurrentIndex((prevIndex) =>
+        prevIndex === slidingImages.length - 5 ? 0 : prevIndex + 1
+      );
+    }, 3000); // Change slide every 3 seconds
 
-    return () => clearInterval(interval)
-}, [])
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className=' relative w-full h-64 overflow-hidden'>
-        <div className=' flex transition-transform duration-1000' 
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
-            {slidingImages.map((src, index) => (
-                <div key={index} className=' min-w-full h-64 flex-shrink-0'>
-                    <Image src={src} width={500} height={600} alt={`Slide ${index + 1}`} className=' w-[500px] h-[800px] object-cover'/>
-                </div>
-            ))}
-        </div>
-        <div className=' absolute bottom-0 left-0 right-0 flex justify-center mb-4'>
-            {slidingImages.map((_, index) => (
-                <div key={index} className={` w-2 h-2 rounded-full mx-1 ${index === currentIndex ? 'bg-white' : ' bg-gray-300'}`}></div>
-            ))}
-        </div>
+    <div className="relative w-full overflow-hidden">
+      <div
+        className="flex transition-transform duration-1000"
+        style={{ transform: `translateX(-${currentIndex * 20}%)` }}
+      >
+        {slidingImages.map((src, index) => (
+          <div key={index} className="w-1/5 flex-shrink-0">
+            <Image src={src} width={300} height={300} alt={`Slide ${index + 1}`} className="w-[250px] h-[300px] rounded-2xl object-cover" />
+          </div>
+        ))}
+      </div>
+      <button
+        onClick={() => setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 5 : prevIndex - 1))}
+        className="absolute top-1/2 transform -translate-y-1/2 left-0 bg-gray-800 bg-opacity-50 text-white px-2 py-1 rounded"
+      >
+        &#10094;
+      </button>
+      <button
+        onClick={() => setCurrentIndex((prevIndex) => (prevIndex === slidingImages.length - 5 ? 0 : prevIndex + 1))}
+        className="absolute top-1/2 transform -translate-y-1/2 right-0 bg-gray-800 bg-opacity-50 text-white px-2 py-1 rounded"
+      >
+        &#10095;
+      </button>
     </div>
-  )
-}
+  );
+};
+
+export default Carousel;
